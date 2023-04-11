@@ -1,0 +1,42 @@
+[
+  {
+    "SKU": "12345",
+    "title": "Example Title",
+    "image": "https://unsplash.com/photos/icahJs5jFXs",
+    "link": "https://facebook.com",
+    "q1" : ["a1", "a2"],
+    "q2" : ["b1", "b3"],
+    "q3" : ["c1"],
+    "q4" : ["d1"]
+  },
+  {
+    "SKU": "12346",
+    "title": "Example Title 2",
+    "image": "https://unsplash.com/photos/icahJs5jFXs",
+    "link": "https://facebook.com",
+    "q1" : ["a1", "a2"],
+    "q2" : ["b1", "b3"],
+    "q3" : ["c1"],
+    "q4" : ["d1"]
+  },
+  {
+    "SKU": "12347",
+    "title": "Example Title 3",
+    "image": "https://unsplash.com/photos/icahJs5jFXs",
+    "link": "https://facebook.com",
+    "q1" : ["a2"],
+    "q2" : ["b2"],
+    "q3" : ["c2"],
+    "q4" : ["d2"]
+  },
+  {
+    "SKU": "12348",
+    "title": "Example Title 4",
+    "image": "https://unsplash.com/photos/icahJs5jFXs",
+    "link": "https://facebook.com",
+    "q1" : ["a3"],
+    "q2" : ["b3"],
+    "q3" : ["c3"],
+    "q4" : ["d3"]
+  }
+]
