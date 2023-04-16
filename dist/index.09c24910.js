@@ -55,57 +55,18 @@ $(".answer").on("click", function() {
         ];
     }
 });
-// $('.result').on('click', function(){
-//     var message = '';
-//     var resultHtml = "";
-//     //check if all questions are answered
-//     if($('.selected').length >= questions){
-//         fetch("data.json")
-//         .then(response => response.json())
-//         .then(data => {
-//             /// filter the data based on user answers
-//             let filteredData = data.filter(item => {
-//                 return (
-//                 item.q1.some(answer => allAnswers.q1.includes(answer)) &&
-//                 item.q2.some(answer => allAnswers.q2.includes(answer)) &&
-//                 item.q3.some(answer => allAnswers.q3.includes(answer)) &&
-//                 item.q4.some(answer => allAnswers.q4.includes(answer))
-//                 );
-//             });
-//             resultHtml += '<ul class = "result-area-ul">';
-//             if (filteredData.length > 0) {
-//               for (let i = 0; i < filteredData.length; i++) {
-//                 resultHtml +=
-//                   '<li class = "result-area-li">'+ filteredData[i].SKU +'</li>' +
-//                   '<li class = "result-area-li">'+ filteredData[i].title +'</li>' +
-//                   '<li class = "result-area-li"><a href ='+ filteredData[i].link +'>'+ filteredData[i].image +'</a></li>';
-//               }
-//               resultHtml += '</ul>';
-//               var resultArea = document.getElementById('result-area-id');
-//               resultArea.innerHTML = resultHtml;
-//           } else {
-//             resultHtml += '<p>No matching items found.</p>';
-//           }
-//         });
-//         $('#quiz-area, .result').hide();
-//         $('.take-another-quiz, .result-area').show();
-//     } else {
-//         message = 'Please answer all questions';
-//         $('.take-another-quiz').hide();
-//         $('.missed').show();
-//     }
-//     $('.response p').text(message);
-//     $('.response').show();
-// });
-// Function to record answers
-const recordAnswer = (question, answer)=>{
-    allAnswers[question].push(answer);
-};
 $(".result").on("click", function() {
     var message = "";
     var resultHtml = "";
+    var allQuestionsAnswered = true;
+    $(".answers").each(function(index, element) {
+        if ($(element).find(".answer.selected").length === 0) {
+            allQuestionsAnswered = false;
+            return false; // exit loop early if any question is unanswered
+        }
+    });
     //check if all questions are answered
-    if ($(".selected").length >= questions) {
+    if (allQuestionsAnswered) {
         fetch("data.json").then((response)=>response.json()).then((data)=>{
             // filter the data based on user answers
             let filteredData = data.filter((item)=>{
