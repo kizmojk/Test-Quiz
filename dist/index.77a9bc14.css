@@ -1,8 +1,8 @@
-html {
-  background-color: #000;
+body {
+  background-color: #d6acac;
 }
 
-body {
+.container {
   text-align: center;
   width: 800px;
   background-color: #fff;
